@@ -260,15 +260,86 @@ h1 {
     left: 20px;
     bottom: 55px;
 
-    width: 190px;
+    width: 290px;
     height: auto;
 
     z-index: 10;
 
     transform: rotate(6deg);
 
-    pointer-events: none;
+    z-index: 5;
+
+    pointer-events: auto;
+
+    cursor: pointer;    
 }
+
+.mascot {
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+}
+
+/* Mascota inclinada hacia la derecha */
+.mascot.pet-right {
+    animation: jumpRight 0.35s ease;
+    transform: rotate(6deg);
+}
+
+/* Mascota inclinada hacia la izquierda */
+.mascot.pet-left {
+    animation: jumpLeft 0.35s ease;
+    transform: rotate(-6deg);
+}
+
+
+/* =========================
+   SALTO HACIA LA DERECHA
+========================= */
+
+@keyframes jumpRight {
+
+    0% {
+        transform: translateY(0) rotate(-6deg);
+    }
+
+    40% {
+        transform: translateY(-35px) rotate(10deg);
+    }
+
+    70% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(6deg);
+    }
+}
+
+
+/* =========================
+   SALTO HACIA LA IZQUIERDA
+========================= */
+
+@keyframes jumpLeft {
+
+    0% {
+        transform: translateY(0) rotate(6deg);
+    }
+
+    40% {
+        transform: translateY(-35px) rotate(-10deg);
+    }
+
+    70% {
+        transform: translateY(-8px) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-6deg);
+    }
+}
+
 
 .footer {
     position: fixed;
@@ -318,7 +389,7 @@ h1 {
     }
 
     .mascot {
-        width: 120px;
+        width: 200px;
 
         left: 10px;
         bottom: 5px;
@@ -382,7 +453,7 @@ h1 {
 
     /* MASCOTA */
     .mascot {
-        width: 125px;
+        width: 155px;
 
         left: 5px;
         bottom: 42px;
